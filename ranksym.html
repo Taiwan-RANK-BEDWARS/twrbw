@@ -1,92 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TWRBW | 排名系統</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&family=Noto+Sans+TC:wght@500;900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&family=Noto+Sans+TC:wght@500;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="gradient-bg"></div>
 
     <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="brand">TW<span>RBW</span></a>
-            <div class="links">
-                <a href="index.html">首頁</a>
-                <!--<a href="ranksym.html">排名系統</a>-->
-                <a href="seasonrule.html">賽季規則</a>
-                <a href="admin.html">開發團隊</a>
-                <a href="https://discord.gg/twrbw" class="discord-link">加入 DISCORD</a>
-            </div>
+      <div class="nav-container">
+        <a href="#" class="brand">TW<span>RBW</span></a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="links" id="navLinks">
+          <a href="index.html">首頁</a>
+          <!--<a href="ranksym.html">排名系統</a>-->
+          <a href="seasonrule.html">賽季規則</a>
+          <a href="admin.html">開發團隊</a>
+          <a href="https://discord.gg/twrbw" class="discord-link"
+            >加入 DISCORD</a
+          >
         </div>
+      </div>
     </nav>
 
     <main class="rank-container">
-        <header class="rank-header">
-            <div class="badge">SEASON 1 LEADERBOARD</div>
-            <h1>巔峰<span>排行榜</span></h1>
-            <p>數據每 10 分鐘自動更新一次</p>
-        </header>
+      <header class="rank-header">
+        <div class="badge">SEASON 1 LEADERBOARD</div>
+        <h1>巔峰<span>排行榜</span></h1>
+        <p>數據每 10 分鐘自動更新一次</p>
+      </header>
 
-        <div class="leaderboard-wrapper">
-            <table class="leaderboard">
-                <thead>
-                    <tr>
-                        <th>排名</th>
-                        <th>玩家</th>
-                        <th>段位</th>
-                        <th>積分 (ELO)</th>
-                        <th>勝場</th>
-                        <th>勝率</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="rank-top rank-1">
-                        <td><span class="rank-num">1</span></td>
-                        <td>
-                            <div class="player-info">
-                                <img src="https://mc-heads.net/avatar/Player1" alt="head" class="player-head">
-                                <span class="player-name">Legend_TW</span>
-                            </div>
-                        </td>
-                        <td><span class="tier tier-grandmaster">大師</span></td>
-                        <td class="rp-value">2,850</td>
-                        <td>142</td>
-                        <td>78%</td>
-                    </tr>
-                    <tr class="rank-top rank-2">
-                        <td><span class="rank-num">2</span></td>
-                        <td>
-                            <div class="player-info">
-                                <img src="https://mc-heads.net/avatar/Player2" alt="head" class="player-head">
-                                <span class="player-name">BedWarsGod</span>
-                            </div>
-                        </td>
-                        <td><span class="tier tier-diamond">鑽石 I</span></td>
-                        <td class="rp-value">2,620</td>
-                        <td>120</td>
-                        <td>65%</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-num">3</span></td>
-                        <td>
-                            <div class="player-info">
-                                <img src="https://mc-heads.net/avatar/Player3" alt="head" class="player-head">
-                                <span class="player-name">Taiwan_No1</span>
-                            </div>
-                        </td>
-                        <td><span class="tier tier-diamond">鑽石 II</span></td>
-                        <td class="rp-value">2,400</td>
-                        <td>98</td>
-                        <td>62%</td>
-                    </tr>
-                    </tbody>
-            </table>
-        </div>
+      <div class="leaderboard-wrapper">
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>玩家</th>
+              <th>段位</th>
+              <th>積分 (ELO)</th>
+              <th>勝場</th>
+              <th>勝率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rank-top rank-1">
+              <td><span class="rank-num">1</span></td>
+              <td>
+                <div class="player-info">
+                  <img
+                    src="https://mc-heads.net/avatar/Player1"
+                    alt="head"
+                    class="player-head"
+                  />
+                  <span class="player-name">Legend_TW</span>
+                </div>
+              </td>
+              <td><span class="tier tier-grandmaster">大師</span></td>
+              <td class="rp-value">2,850</td>
+              <td>142</td>
+              <td>78%</td>
+            </tr>
+            <tr class="rank-top rank-2">
+              <td><span class="rank-num">2</span></td>
+              <td>
+                <div class="player-info">
+                  <img
+                    src="https://mc-heads.net/avatar/Player2"
+                    alt="head"
+                    class="player-head"
+                  />
+                  <span class="player-name">BedWarsGod</span>
+                </div>
+              </td>
+              <td><span class="tier tier-diamond">鑽石 I</span></td>
+              <td class="rp-value">2,620</td>
+              <td>120</td>
+              <td>65%</td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">3</span></td>
+              <td>
+                <div class="player-info">
+                  <img
+                    src="https://mc-heads.net/avatar/Player3"
+                    alt="head"
+                    class="player-head"
+                  />
+                  <span class="player-name">Taiwan_No1</span>
+                </div>
+              </td>
+              <td><span class="tier tier-diamond">鑽石 II</span></td>
+              <td class="rp-value">2,400</td>
+              <td>98</td>
+              <td>62%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
-
-</body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
