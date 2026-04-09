@@ -1,73 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TWRBW | 賽事規章</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&family=Noto+Sans+TC:wght@500;900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&family=Noto+Sans+TC:wght@500;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="gradient-bg"></div>
 
     <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="brand">TW<span>RBW</span></a>
-            <div class="links">
-                <a href="index.html">首頁</a>
-                <!--<a href="ranksym.html">排名系統</a>-->
-                <a href="seasonrule.html">賽季規則</a>
-                <a href="admin.html">開發團隊</a>
-                <a href="https://discord.gg/twrbw" class="discord-link">加入 DISCORD</a>
-            </div>
+      <div class="nav-container">
+        <a href="#" class="brand">TW<span>RBW</span></a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="links" id="navLinks">
+          <a href="index.html">首頁</a>
+          <!--<a href="ranksym.html">排名系統</a>-->
+          <a href="seasonrule.html">賽季規則</a>
+          <a href="admin.html">開發團隊</a>
+          <a href="https://discord.gg/twrbw" class="discord-link"
+            >加入 DISCORD</a
+          >
         </div>
+      </div>
     </nav>
 
     <main class="rule-container">
-        <header class="rule-header">
-            <div class="badge">LEGAL & CONDUCT</div>
-            <h1>賽事<span>核心規章</span></h1>
-            <p>請詳細閱讀以下條款，維護公平競技環境是每位玩家的責任。</p>
-        </header>
+      <header class="rule-header">
+        <div class="badge">LEGAL & CONDUCT</div>
+        <h1>賽事<span>核心規章</span></h1>
+        <p>請詳細閱讀以下條款，維護公平競技環境是每位玩家的責任。</p>
+      </header>
 
-        <section class="rule-sections">
-            <div class="rule-card">
-                <div class="rule-num">01</div>
-                <h3>公平競爭與防作弊</h3>
-                <ul>
-                    <li>嚴禁使用任何形式的外掛、腳本（Auto-Clicker）或客戶端修改。</li>
-                    <li>禁止利用地圖漏洞（Glitch）獲取不當優勢。</li>
-                    <li>所有參賽者須配合裁判進行螢幕分享或重播紀錄檢查。</li>
-                </ul>
-            </div>
+      <section class="rule-sections">
+        <div class="rule-card">
+          <div class="rule-num">01</div>
+          <h3>公平競爭與防作弊</h3>
+          <ul>
+            <li>嚴禁使用任何形式的外掛、腳本（Auto-Clicker）或客戶端修改。</li>
+            <li>禁止利用地圖漏洞（Glitch）獲取不當優勢。</li>
+            <li>所有參賽者須配合裁判進行螢幕分享或重播紀錄檢查。</li>
+          </ul>
+        </div>
 
-            <div class="rule-card">
-                <div class="rule-num">02</div>
-                <h3>積分與排名系統</h3>
-                <ul>
-                    <li>積分計算基準：最終勝負、擊殺數、最終擊殺數（Final Kills）。</li>
-                    <li>若中途斷線，系統將依據該場數據保留 50% 積分懲罰。</li>
-                    <li>嚴禁洗分（Boosting）行為，一經查獲將永久封鎖。</li>
-                </ul>
-            </div>
+        <div class="rule-card">
+          <div class="rule-num">02</div>
+          <h3>積分與排名系統</h3>
+          <ul>
+            <li>積分計算基準：最終勝負、擊殺數、最終擊殺數（Final Kills）。</li>
+            <li>若中途斷線，系統將依據該場數據保留 50% 積分懲罰。</li>
+            <li>嚴禁洗分（Boosting）行為，一經查獲將永久封鎖。</li>
+          </ul>
+        </div>
 
-            <div class="rule-card warning">
-                <div class="rule-num">03</div>
-                <h3>社群行為準則</h3>
-                <ul>
-                    <li>禁止在對話框進行人身攻擊、歧視或挑釁言論。</li>
-                    <li>請尊重對手與裁判，維持台灣 Rank 圈的良好素質。</li>
-                    <li>惡意騷擾其他玩家者，將取消該賽季領獎資格。</li>
-                </ul>
-            </div>
-        </section>
+        <div class="rule-card warning">
+          <div class="rule-num">03</div>
+          <h3>社群行為準則</h3>
+          <ul>
+            <li>禁止在對話框進行人身攻擊、歧視或挑釁言論。</li>
+            <li>請尊重對手與裁判，維持台灣 Rank 圈的良好素質。</li>
+            <li>惡意騷擾其他玩家者，將取消該賽季領獎資格。</li>
+          </ul>
+        </div>
+      </section>
 
-        <footer class="rule-footer">
-            <p>最後更新日期：2026 / 04 / 06</p>
-            <a href="#" class="btn btn-primary">我已閱讀並同意規章</a>
-        </footer>
+      <footer class="rule-footer">
+        <p>最後更新日期：2026 / 04 / 06</p>
+        <a href="#" class="btn btn-primary">我已閱讀並同意規章</a>
+      </footer>
     </main>
-
-</body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
