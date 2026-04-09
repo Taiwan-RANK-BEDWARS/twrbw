@@ -1,650 +1,909 @@
 :root {
-    /* 定義主題色：螢光藍與紫的電競漸變 */
-    --primary: #00f2ff;
-    --accent: #7000ff;
-    --bg-black: #050505;
-    --text-white: #ffffff;
-    --glass: rgba(255, 255, 255, 0.03);
+  /* 定義主題色：螢光藍與紫的電競漸變 */
+  --primary: #00f2ff;
+  --accent: #7000ff;
+  --bg-black: #050505;
+  --text-white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.03);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-black);
-    color: var(--text-white);
-    font-family: 'Oxanium', 'Noto Sans TC', sans-serif;
-    overflow-x: hidden;
-    min-height: 100vh;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  font-family: "Oxanium", "Noto Sans TC", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* --- 動態漸變背景核心 --- */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* 設置多個漸變點 */
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(112, 0, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, transparent 100%);
-    z-index: -1;
-    animation: gradientMove 15s ease infinite alternate;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 設置多個漸變點 */
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 242, 255, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(112, 0, 255, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  z-index: -1;
+  animation: gradientMove 15s ease infinite alternate;
 }
 
 @keyframes gradientMove {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 /* --- 導覽列 --- */
 .nav {
-    padding: 20px 0;
-    background: rgba(5, 5, 5, 0.7);
-    backdrop-filter: blur(15px); /* 磨砂玻璃 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  padding: 20px 0;
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(15px); /* 磨砂玻璃 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
 }
 
 .brand {
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 2px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
 .brand span {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .links a {
-    color: #bbb;
-    text-decoration: none;
-    margin-left: 30px;
-    font-weight: 500;
-    transition: 0.3s;
+  color: #bbb;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .links a:hover {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--primary);
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
 }
 
 .discord-link {
-    border: 1px solid var(--primary);
-    padding: 8px 18px;
-    border-radius: 4px;
+  border: 1px solid var(--primary);
+  padding: 8px 18px;
+  border-radius: 4px;
 }
 
 /* --- Hero 區塊 --- */
 .hero {
-    height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .badge {
-    color: var(--primary);
-    background: rgba(0, 242, 255, 0.1);
-    border: 1px solid var(--primary);
-    display: inline-block;
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+  color: var(--primary);
+  background: rgba(0, 242, 255, 0.1);
+  border: 1px solid var(--primary);
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
 }
 
 h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 20px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .accent {
-    background: linear-gradient(180deg, #fff 30%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #fff 30%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-    color: #888;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    font-size: 1.1rem;
+  color: #888;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
 }
 
 /* 按鈕樣式 */
 .btn {
-    display: inline-block;
-    padding: 15px 35px;
-    text-decoration: none;
-    font-weight: 700;
-    margin: 10px;
-    transition: 0.4s;
-    text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 35px;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 10px;
+  transition: 0.4s;
+  text-transform: uppercase;
 }
 
 .btn-primary {
-    background: var(--primary);
-    color: #000;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  background: var(--primary);
+  color: #000;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 0 30px var(--primary);
-    transform: translateY(-3px);
+  box-shadow: 0 0 30px var(--primary);
+  transform: translateY(-3px);
 }
 
 .btn-outline {
-    border: 1px solid #fff;
-    color: #fff;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  border: 1px solid #fff;
+  color: #fff;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 
 .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* --- 特色卡片區塊 --- */
 .features {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .feature-item {
-    background: var(--glass);
-    padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    transition: 0.3s;
-    text-align: center;
+  background: var(--glass);
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: 0.3s;
+  text-align: center;
 }
 
 .feature-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--primary);
-    transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+  transform: translateY(-10px);
 }
 
 .icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .feature-item h3 {
-    margin-bottom: 15px;
-    color: var(--primary);
+  margin-bottom: 15px;
+  color: var(--primary);
 }
 
 .feature-item p {
-    color: #aaa;
-    font-size: 0.95rem;
+  color: #aaa;
+  font-size: 0.95rem;
 }
 /* 容器樣式 */
 .rank-container {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
 .rank-header {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .rank-header h1 span {
-    color: var(--primary);
-    margin-left: 10px;
+  color: var(--primary);
+  margin-left: 10px;
 }
 
 /* 排行榜外層：玻璃效果 */
 .leaderboard-wrapper {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .leaderboard {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
 }
 
 .leaderboard th {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    font-size: 0.9rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .leaderboard td {
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    font-size: 1.1rem;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 1.1rem;
 }
 
 /* 玩家資訊與頭像 */
 .player-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .player-head {
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.2);
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .player-name {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 /* 排名數字樣式 */
 .rank-num {
-    font-family: 'Oxanium';
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: #888;
+  font-family: "Oxanium";
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #888;
 }
 
 /* 前兩名的特殊光暈 */
-.rank-1 .rank-num { color: #ffcc00; text-shadow: 0 0 10px #ffcc00; }
-.rank-2 .rank-num { color: #e0e0e0; text-shadow: 0 0 10px #ffffff; }
+.rank-1 .rank-num {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
+.rank-2 .rank-num {
+  color: #e0e0e0;
+  text-shadow: 0 0 10px #ffffff;
+}
 
 .rank-top {
-    background: rgba(0, 242, 255, 0.03);
+  background: rgba(0, 242, 255, 0.03);
 }
 
 /* 段位標籤 (Tiers) */
 .tier {
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.tier-grandmaster { background: linear-gradient(45deg, #ff0055, #7000ff); color: white; }
-.tier-diamond { background: #00f2ff; color: #000; }
-.tier-platinum { background: #e5e5e5; color: #000; }
+.tier-grandmaster {
+  background: linear-gradient(45deg, #ff0055, #7000ff);
+  color: white;
+}
+.tier-diamond {
+  background: #00f2ff;
+  color: #000;
+}
+.tier-platinum {
+  background: #e5e5e5;
+  color: #000;
+}
 
 .rp-value {
-    color: var(--primary);
-    font-weight: 700;
-    font-family: 'Oxanium';
+  color: var(--primary);
+  font-weight: 700;
+  font-family: "Oxanium";
 }
 
 /* 滑過效果 */
 .leaderboard tbody tr:hover {
-    background: rgba(255, 255, 255, 0.07);
-    transition: 0.2s;
+  background: rgba(255, 255, 255, 0.07);
+  transition: 0.2s;
 }
 /* 容器布局 */
 .rule-container {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
 }
 
 .rule-header {
-    text-align: center;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .rule-header h1 span {
-    color: var(--primary); /* 繼承 style.css 的螢光藍 */
+  color: var(--primary); /* 繼承 style.css 的螢光藍 */
 }
 
 /* 規則卡片設計 */
 .rule-sections {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .rule-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: 5px solid var(--primary);
-    padding: 30px 40px;
-    border-radius: 4px 15px 15px 4px;
-    position: relative;
-    transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 5px solid var(--primary);
+  padding: 30px 40px;
+  border-radius: 4px 15px 15px 4px;
+  position: relative;
+  transition: 0.3s ease;
 }
 
 .rule-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(10px);
 }
 
 .rule-num {
-    position: absolute;
-    top: -15px;
-    left: 20px;
-    font-family: 'Oxanium';
-    font-size: 2rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.1);
-    z-index: -1;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-family: "Oxanium";
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: -1;
 }
 
 .rule-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #fff;
-    letter-spacing: 1px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
 .rule-card ul {
-    list-style: none;
+  list-style: none;
 }
 
 .rule-card ul li {
-    color: #aaa;
-    margin-bottom: 12px;
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.6;
+  color: #aaa;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
 }
 
 /* 自定義清單符號 */
 .rule-card ul li::before {
-    content: "◢";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-size: 0.7rem;
-    top: 2px;
+  content: "◢";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.7rem;
+  top: 2px;
 }
 
 /* 警告類型的卡片 (紅色調) */
 .rule-card.warning {
-    border-left-color: #ff0055;
-    background: rgba(255, 0, 85, 0.03);
+  border-left-color: #ff0055;
+  background: rgba(255, 0, 85, 0.03);
 }
 
 .rule-card.warning h3 {
-    color: #ff0055;
+  color: #ff0055;
 }
 
 .rule-card.warning ul li::before {
-    color: #ff0055;
+  color: #ff0055;
 }
 
 /* 頁尾按鈕區 */
 .rule-footer {
-    margin-top: 60px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 40px;
+  margin-top: 60px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
 }
 
 .rule-footer p {
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 /* 容器 */
 .season-container {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
 .season-header {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /* 網格布局 */
 .block-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 /* 方塊基礎樣式 */
 .item-block {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s ease;
-    display: flex;
-    flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 方塊頭部 */
 .block-head {
-    padding: 15px;
-    font-weight: 800;
-    text-align: center;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* 方塊內容 */
 .block-body {
-    padding: 20px;
-    flex-grow: 1;
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .item {
-    padding: 8px 12px;
-    margin-bottom: 8px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 6px;
-    font-size: 0.95rem;
-    color: #ddd;
-    border-left: 3px solid #555;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #ddd;
+  border-left: 3px solid #555;
 }
 
 .item small {
-    display: block;
-    font-size: 0.75rem;
-    color: #777;
+  display: block;
+  font-size: 0.75rem;
+  color: #777;
 }
 
 /* --- 各分類配色方案 --- */
 
 /* 1. 初始允許 (綠色系) */
-.start { border-color: rgba(0, 255, 65, 0.2); }
-.start .block-head { color: #00ff41; background: rgba(0, 255, 65, 0.05); }
-.start .item { border-left-color: #00ff41; }
+.start {
+  border-color: rgba(0, 255, 65, 0.2);
+}
+.start .block-head {
+  color: #00ff41;
+  background: rgba(0, 255, 65, 0.05);
+}
+.start .item {
+  border-left-color: #00ff41;
+}
 
 /* 2. 鑽石 (藍色系) */
-.diamond { border-color: rgba(0, 242, 255, 0.3); }
-.diamond .block-head { color: #00f2ff; background: rgba(0, 242, 255, 0.05); }
-.diamond .item.special { border-left-color: #00f2ff; background: rgba(0, 242, 255, 0.1); font-weight: bold; }
+.diamond {
+  border-color: rgba(0, 242, 255, 0.3);
+}
+.diamond .block-head {
+  color: #00f2ff;
+  background: rgba(0, 242, 255, 0.05);
+}
+.diamond .item.special {
+  border-left-color: #00f2ff;
+  background: rgba(0, 242, 255, 0.1);
+  font-weight: bold;
+}
 
 /* 3. 綠寶石 (亮綠系) */
-.emerald { border-color: rgba(80, 255, 80, 0.3); }
-.emerald .block-head { color: #50ff50; background: rgba(80, 255, 80, 0.05); }
-.emerald .item.special { border-left-color: #50ff50; background: rgba(80, 255, 80, 0.1); font-weight: bold; }
+.emerald {
+  border-color: rgba(80, 255, 80, 0.3);
+}
+.emerald .block-head {
+  color: #50ff50;
+  background: rgba(80, 255, 80, 0.05);
+}
+.emerald .item.special {
+  border-left-color: #50ff50;
+  background: rgba(80, 255, 80, 0.1);
+  font-weight: bold;
+}
 
 /* 4. 床爆 (橙紅系) */
-.bed-broken { border-color: rgba(255, 150, 0, 0.3); }
-.bed-broken .block-head { color: #ff9600; background: rgba(255, 150, 0, 0.05); }
-.bed-broken .item.danger { border-left-color: #ff9600; background: rgba(255, 150, 0, 0.1); color: #fff; }
+.bed-broken {
+  border-color: rgba(255, 150, 0, 0.3);
+}
+.bed-broken .block-head {
+  color: #ff9600;
+  background: rgba(255, 150, 0, 0.05);
+}
+.bed-broken .item.danger {
+  border-left-color: #ff9600;
+  background: rgba(255, 150, 0, 0.1);
+  color: #fff;
+}
 
 /* 5. 禁止 (純紅系) */
-.banned { border-color: rgba(255, 0, 85, 0.4); }
-.banned .block-head { color: #ff0055; background: rgba(255, 0, 85, 0.1); }
-.banned .item.dead { border-left-color: #ff0055; text-decoration: line-through; opacity: 0.6; }
+.banned {
+  border-color: rgba(255, 0, 85, 0.4);
+}
+.banned .block-head {
+  color: #ff0055;
+  background: rgba(255, 0, 85, 0.1);
+}
+.banned .item.dead {
+  border-left-color: #ff0055;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
 
 /* 滑過特效 */
 .item-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.05);
 }
 .team-container {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
 }
 
 .team-header {
-    text-align: center;
-    margin-bottom: 80px;
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 .team-header h1 span {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 /* 團隊網格 */
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
 }
 
 /* 成員卡片 */
 .member-card {
-    perspective: 1000px;
+  perspective: 1000px;
 }
 
 .card-inner {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    display: flex;
-    padding: 30px;
-    gap: 25px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  display: flex;
+  padding: 30px;
+  gap: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* 背景發光裝飾 */
 .card-inner::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(0, 242, 255, 0.05), transparent);
-    transform: translateX(-100%);
-    transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    rgba(0, 242, 255, 0.05),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
 }
 
 .member-card:hover .card-inner {
-    transform: translateY(-10px) rotateX(5deg);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px) rotateX(5deg);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .member-card:hover .card-inner::after {
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 /* 角色圖像 (Minecraft Body) */
 .member-image {
-    flex-shrink: 0;
-    width: 100px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+  flex-shrink: 0;
+  width: 100px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
 
 .member-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* 文字資訊 */
 .member-info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .role-tag {
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    display: inline-block;
-    width: fit-content;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: fit-content;
 }
 
-.role-tag.leader { background: #ff0055; color: #fff; }
-.role-tag.tech { background: var(--primary); color: #000; }
-.role-tag.design { background: #ffcc00; color: #000; }
+.role-tag.leader {
+  background: #ff0055;
+  color: #fff;
+}
+.role-tag.tech {
+  background: var(--primary);
+  color: #000;
+}
+.role-tag.design {
+  background: #ffcc00;
+  color: #000;
+}
 
 .member-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
 .bio {
-    font-size: 0.9rem;
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .social-links {
-    margin-top: auto;
-    display: flex;
-    gap: 15px;
+  margin-top: auto;
+  display: flex;
+  gap: 15px;
 }
 
 .social-links a {
-    font-size: 0.75rem;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-bottom: 1px solid transparent;
-    transition: 0.3s;
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
 }
 
 .social-links a:hover {
-    border-bottom-color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+/* =====================
+   漢堡選單
+===================== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================
+   手機版響應式
+===================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.97);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.4s ease,
+      padding 0.4s ease;
+  }
+
+  .links.open {
+    max-height: 400px;
+    padding: 10px 0 20px;
+  }
+
+  .links a {
+    margin: 0;
+    padding: 14px 25px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1rem;
+  }
+
+  .links a:last-child {
+    border-bottom: none;
+  }
+
+  .discord-link {
+    border: none !important;
+    border-radius: 0;
+    color: var(--primary) !important;
+  }
+
+  .hero {
+    height: auto;
+    padding: 80px 20px 60px;
+  }
+
+  .btn {
+    display: block;
+    margin: 8px auto;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leaderboard-wrapper {
+    overflow-x: auto;
+  }
+
+  .leaderboard th,
+  .leaderboard td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .block-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rule-card {
+    padding: 20px;
+  }
+
+  .rule-card:hover {
+    transform: none;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .member-card:hover .card-inner {
+    transform: translateY(-5px);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .rank-container,
+  .rule-container,
+  .season-container,
+  .team-container {
+    margin: 30px auto;
+  }
+
+  .leaderboard th,
+  .leaderboard td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  .member-image {
+    width: 70px;
+    height: 105px;
+  }
 }
